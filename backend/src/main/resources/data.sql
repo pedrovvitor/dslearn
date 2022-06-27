@@ -21,3 +21,7 @@ INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) values ('2.0
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) values ('Trilha HTML', 'Trilha principal do curso', 1, 'https://freesvg.org/img/HTML-Icon-Final.png', 1, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) values ('Forum', 'Tire suas dúvidas', 2, 'https://freesvg.org/img/HTML-Icon-Final.png', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) values ('Lives', 'Lives exclusivas para a turma', 3, 'https://freesvg.org/img/HTML-Icon-Final.png', 0, 1);
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 1', 'História do HTML', 1, 'https://freesvg.org/img/HTML-Icon-Final.png', 1, null);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 2', 'Meu primeiro HTML', 2, 'https://freesvg.org/img/HTML-Icon-Final.png', 1, 1);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 3', 'Principais Tags HTML', 3, 'https://freesvg.org/img/HTML-Icon-Final.png', 1, 2);
