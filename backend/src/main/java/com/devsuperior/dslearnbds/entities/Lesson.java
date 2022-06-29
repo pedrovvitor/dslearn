@@ -30,6 +30,10 @@ public abstract class Lesson implements Serializable {
             })
     private Set<Enrollment> enrollmentsDone = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "deliver_id")
+    private Deliver deliver;
+
     public Lesson() {
     }
 
@@ -74,6 +78,10 @@ public abstract class Lesson implements Serializable {
 
     public Set<Enrollment> getEnrollmentsDone() {
         return enrollmentsDone;
+    }
+
+    public Deliver getDeliver() {
+        return deliver;
     }
 
     @Override

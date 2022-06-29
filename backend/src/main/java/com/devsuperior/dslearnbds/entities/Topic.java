@@ -48,10 +48,6 @@ public class Topic implements Serializable {
     @OneToMany(mappedBy = "topic")
     private Set<Reply> replies = new HashSet<>();
 
-    public Reply getAnswer() {
-        return answer;
-    }
-
     public Topic() {
     }
 
@@ -123,6 +119,14 @@ public class Topic implements Serializable {
 
     public Set<User> getLikes() {
         return likes;
+    }
+
+    public Reply getAnswer() {
+        return answer;
+    }
+
+    public Set<Reply> getReplies() {
+        return replies;
     }
 
     @Override
