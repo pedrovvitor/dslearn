@@ -3,12 +3,14 @@ package com.devsuperior.dslearnbds.entities;
 import com.devsuperior.dslearnbds.entities.enums.DeliverStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_deliver")
-public class Deliver {
+public class Deliver implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
