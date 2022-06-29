@@ -16,13 +16,16 @@ import java.util.Optional;
 public class UserService implements UserDetailsService {
 
     final UserRepository repository;
+    final AuthService authService;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, AuthService authService) {
         this.repository = userRepository;
+        this.authService = authService;
     }
 
     @Transactional(readOnly = true)
     public UserDTO findById(Long id) {
+        authService.validateSelfOrAdmin(id);
         Optional<User> obj = repository.findById(id);
         User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
         return new UserDTO(entity);
